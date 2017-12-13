@@ -4,6 +4,10 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -14,17 +18,10 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: [
-                    {
-                        loader: "style-loader" // creates style nodes from JS strings
-                    },
-                    {
-                        loader: "css-loader" // translates CSS into CommonJS
-                    },
-                    {
-                        loader: "sass-loader" // compiles Sass to CSS
-                    }
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader', 'sass-loader']
+                })
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -41,10 +38,16 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(path.join(__dirname, 'src'), 'index.html'),
+            hash: true
+        }),
+        new ExtractTextPlugin('styles.css'),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })
+        }),
+        new CleanWebpackPlugin(['dist']),
     ],
 };
