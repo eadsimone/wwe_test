@@ -9,7 +9,8 @@ Used technology
 
 Instalation
   - clone the repository
-  - on root folder run: npm run build
+  - run a *npm install* command
+  - on root folder run: *npm run build*
 
 See the project:
  - open the index.html on dist folder with any broswer
