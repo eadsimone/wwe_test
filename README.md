@@ -1,4 +1,4 @@
-# wwe-Network-test
+# WWE-Network-Test
 Development test for WWE
 
 Used technology
