@@ -1,7 +1,6 @@
 /**
  * Created by edesimone on 12/12/17.
  */
-//const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -42,30 +41,10 @@ module.exports = {
         ]
     },
     plugins: [
-        //new CleanWebpackPlugin(['dist'])
-        //         new HtmlWebpackPlugin({
-        //         title: 'Output Management'
-        // })
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
         })
     ],
-
-    // plugins: [
-    //     new webpack.optimize.UglifyJsPlugin(),
-    //     new webpack.ProvidePlugin({
-    //         $: 'jquery',
-    //         jQuery: 'jquery',
-    //         'window.jQuery': 'jquery',
-    //         Popper: ['popper.js', 'default']
-    //         // // In case you imported plugins individually, you must also require them here:
-    //         // Util: "exports-loader?Util!bootstrap/js/dist/util",
-    //         // Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
-    //         // ...
-    //     }),
-    //     new HtmlWebpackPlugin({template: './src/index.html'}),
-    //
-    // ]
 };
