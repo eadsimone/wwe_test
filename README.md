@@ -13,4 +13,4 @@ Instalation
   - on root folder run: *npm run build*
 
 See the project:
- -run: *npm start*
+- run: *npm start* 
