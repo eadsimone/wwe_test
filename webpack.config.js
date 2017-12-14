@@ -50,4 +50,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(['dist']),
     ],
+    devServer: {
+         contentBase: './dist'
+   },
 };

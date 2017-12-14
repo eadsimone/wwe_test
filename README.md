@@ -13,4 +13,4 @@ Instalation
   - on root folder run: *npm run build*
 
 See the project:
- - open the index.html on dist folder with any broswer
+ -run: *npm start*
